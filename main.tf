@@ -3,12 +3,12 @@ provider "azurerm"{
 }
 
 resource "azurerm_resource_group" "rg"{
-    name = "rg-SE_WebApp-dev"
-    location = "East US 2"
+    name = "rg-${var.proyecto}-${var.entorno}"
+    location = var.ubicacion
 
     tags = {
-        environment = "dev"
-        proyect = "SE_WebApp"
+        environment = var.entorno
+        proyect = var.proyecto
         created_by = "Terraform"
     }
 }
