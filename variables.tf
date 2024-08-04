@@ -21,3 +21,9 @@ variable "tags"{
   }
   description = "etiquetas de los recursos"
 }
+
+variable "password"{
+  description = "contraseña del servidor sql"
+  type        = string
+  sensitive   = true
+}

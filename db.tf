@@ -5,7 +5,7 @@ resource "azurerm_mssql_server" "sql_server" {
     location = var.ubicacion
     version = "12.0"
     administrator_login = "sqladmin"
-    administrator_login_password = "Password1234"
+    administrator_login_password = var.password
 
     tags = var.tags
 }
@@ -59,3 +59,11 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link"{
 
     tags = var.tags
 } 
+
+resource "azurerm_sql_firewall_rule" "allow_my_ip" {
+    name = "allow_my_ip"
+    resource_group_name = azurerm_mssql_server.sql_server.resource_group_name
+    server_name         = azurerm_mssql_server.sql_server.name 
+    start_ip_address    = "201.190.16.157"
+    end_ip_address      = "201.190.16.157"
+}
