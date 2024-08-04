@@ -1,5 +1,5 @@
 variable "proyecto"{
-  default     = "SE_WebApp"
+  default     = "webapp"
   description = "nombre del proyecto"
 }
 
@@ -11,4 +11,13 @@ variable "entorno"{
 variable "ubicacion"{
   default     = "East US 2"
   description = "ubicación de los recursos de azure"
+}
+
+variable "tags"{
+  default     = {
+    environment = "dev"
+    proyect = "webapp"
+    created_by = "Terraform"
+  }
+  description = "etiquetas de los recursos"
 }
