@@ -25,7 +25,7 @@ resource "azurerm_subnet" "subnetweb" {
   name                 = "subnet-web-${var.proyecto}-${var.entorno}"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["	10.0.3.0/24"]
+  address_prefixes     = ["10.0.3.0/24"]
 
   delegation {
     name = "webapp_delegation"

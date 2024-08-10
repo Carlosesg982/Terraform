@@ -7,7 +7,7 @@ resource "azurerm_app_service_plan" "app_service_plan" {
     
     sku {
         tier = "Standard"
-        size = "F1"
+        size = "B1"
     }
 
     tags = var.tags
